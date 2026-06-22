@@ -1,0 +1,7 @@
+.devbox/
+.direnv/
+target/
+
+.DS_Store
+*.swp
+*.swo

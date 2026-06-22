@@ -1,0 +1,12 @@
+[package]
+name = "zed-workspaces-dock"
+version = "0.1.0"
+edition = "2024"
+description = "Rust CLI for opening Zed workspace files through a managed symlink dock."
+license = "MIT"
+
+[[bin]]
+name = "zed-workspaces-dock"
+path = "src/main.rs"
+
+[dependencies]

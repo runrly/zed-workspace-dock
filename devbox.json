@@ -1,0 +1,21 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.17.3/.schema/devbox.schema.json",
+  "packages": [
+    "cargo-make@latest",
+    "rustup@latest",
+    "libiconv@latest"
+  ],
+  "env": {
+    "PROJECT_DIR": "$PWD",
+    "RUSTUP_HOME": "$PWD/.devbox/rustup",
+    "CARGO_HOME": "$PWD/.devbox/cargo",
+    "PATH": "$PWD/.devbox/cargo/bin:$PATH"
+  },
+  "shell": {
+    "init_hook": [
+      "mkdir -p \"$RUSTUP_HOME\" \"$CARGO_HOME\"",
+      "export LIBRARY_PATH=\"$PROJECT_DIR/.devbox/nix/profile/default/lib:$LIBRARY_PATH\"",
+      "rustup default stable"
+    ]
+  }
+}

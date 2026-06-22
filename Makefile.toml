@@ -1,0 +1,35 @@
+[config]
+default_to_workspace = false
+skip_core_tasks = true
+
+[tasks.bootstrap]
+command = "cargo"
+args = ["fetch"]
+
+[tasks.build]
+command = "cargo"
+args = ["build"]
+
+[tasks.check]
+command = "cargo"
+args = ["check", "--all-targets"]
+
+[tasks.clippy]
+command = "cargo"
+args = ["clippy", "--all-targets", "--all-features", "--", "-D", "warnings"]
+
+[tasks.fmt]
+command = "cargo"
+args = ["fmt", "--all"]
+
+[tasks.fmt-check]
+command = "cargo"
+args = ["fmt", "--all", "--", "--check"]
+
+[tasks.run]
+command = "cargo"
+args = ["run", "--"]
+
+[tasks.test]
+command = "cargo"
+args = ["test"]
