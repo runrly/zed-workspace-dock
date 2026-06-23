@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zed-workspace-dock.local/schemas/zed-dock-marker.schema.json",
+  "title": "Zed Workspace Dock Marker",
+  "description": "Marker file stored as .zed-dock.json inside a managed symlink dock.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "workspace_path", "links"],
+  "properties": {
+    "version": {
+      "description": "Marker format version supported by this binary.",
+      "type": "integer",
+      "const": 1
+    },
+    "workspace_path": {
+      "description": "Absolute path of the workspace file that owns this dock.",
+      "type": "string",
+      "minLength": 1
+    },
+    "links": {
+      "description": "Symlink entries managed by this dock.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "target"],
+        "properties": {
+          "name": {
+            "description": "Single filesystem entry name inside the dock.",
+            "type": "string",
+            "minLength": 1
+          },
+          "target": {
+            "description": "Absolute path targeted by the dock symlink.",
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

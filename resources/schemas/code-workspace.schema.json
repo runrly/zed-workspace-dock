@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zed-workspace-dock.local/schemas/code-workspace.schema.json",
+  "title": "Zed Workspace Dock Workspace",
+  "description": "Strict JSON .code-workspace document understood by zed-workspace-dock.",
+  "type": "object",
+  "properties": {
+    "folders": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path"],
+        "properties": {
+          "name": {
+            "description": "Optional dock link name. Must be a single filesystem entry name.",
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "description": "Folder path. Registered workspaces store canonical absolute paths.",
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "zed-dock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode"],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": ["folders", "symlink"]
+        }
+      }
+    }
+  }
+}

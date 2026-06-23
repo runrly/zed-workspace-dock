@@ -1,0 +1,17 @@
+[
+  {
+    "label": "Zed Workspace Dock: Open",
+    "command": "__ZED_WORKSPACE_DOCK_COMMAND__",
+    "args": ["open", "$ZED_FILE"]
+  },
+  {
+    "label": "Zed Workspace Dock: Open as Symlink Dock",
+    "command": "__ZED_WORKSPACE_DOCK_COMMAND__",
+    "args": ["open", "$ZED_FILE", "--mode", "symlink"]
+  },
+  {
+    "label": "Zed Workspace Dock: Open as Folders",
+    "command": "__ZED_WORKSPACE_DOCK_COMMAND__",
+    "args": ["open", "$ZED_FILE", "--mode", "folders"]
+  }
+]
