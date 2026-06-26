@@ -12,6 +12,10 @@ fn binary() -> &'static str {
     env!("CARGO_BIN_EXE_zed-workspace-dock")
 }
 
+fn short_binary() -> &'static str {
+    env!("CARGO_BIN_EXE_zwd")
+}
+
 fn run(args: &[&str]) -> Result<Output, Box<dyn Error>> {
     Ok(Command::new(binary()).args(args).output()?)
 }
@@ -27,6 +31,24 @@ fn run_with_home_and_cwd(args: &[&str], home: &Path, cwd: &Path) -> Result<Outpu
 
 fn stdout_line(output: &Output) -> String {
     String::from_utf8_lossy(&output.stdout).trim().to_string()
+}
+
+#[test]
+fn short_binary_alias_launches_same_cli() -> Result<(), Box<dyn Error>> {
+    let output = Command::new(short_binary()).arg("--help").output()?;
+
+    assert!(
+        output.status.success(),
+        "stderr: {}",
+        String::from_utf8_lossy(&output.stderr)
+    );
+    assert!(
+        String::from_utf8_lossy(&output.stdout).contains("Usage: zwd <COMMAND>"),
+        "stdout: {}",
+        String::from_utf8_lossy(&output.stdout)
+    );
+
+    Ok(())
 }
 
 #[test]

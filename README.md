@@ -19,13 +19,15 @@ Install the latest release on Windows PowerShell:
 powershell -ExecutionPolicy Bypass -c "irm https://github.com/runrly/zed-workspace-dock/releases/latest/download/zed-workspace-dock-installer.ps1 | iex"
 ```
 
-Installers place the binary under Cargo's bin directory by default. Make sure that directory is on your `PATH`.
+Installers place the binaries under Cargo's bin directory by default. Make sure that directory is on your `PATH`.
 
 You can also download platform archives from GitHub Releases. Release artifacts include SHA256 checksums.
 
 Windows support is partial in the MVP: `folders` mode is supported, while `symlink` mode is currently supported on macOS and Linux only.
 
 ## Usage
+
+The canonical command is `zed-workspace-dock`. The short alias `zwd` runs the same CLI, so every example below can use either name.
 
 Create a registered workspace with a generated name:
 
@@ -104,6 +106,12 @@ Install global Zed tasks with an explicit binary path:
 
 ```bash
 zed-workspace-dock install --command /usr/local/bin/zed-workspace-dock
+```
+
+You can also point installed tasks at the short alias:
+
+```bash
+zwd install --command /usr/local/bin/zwd
 ```
 
 Install into an explicit tasks file:

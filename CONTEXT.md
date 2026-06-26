@@ -8,6 +8,10 @@ Zed Workspace Dock is a developer tool for opening multi-project Zed sessions fr
 The product and CLI that reads a workspace file and opens projects in Zed through either direct folders or a managed symlink dock.
 _Avoid_: the pluralized product and binary names
 
+**Short binary alias**:
+`zwd` is the supported short command name for the same CLI. The product, package, and canonical binary name remain Zed Workspace Dock and `zed-workspace-dock`.
+_Avoid_: product name, package name
+
 **Workspace file**:
 A `.code-workspace` file describing one or more project folders for a Zed session. In the MVP, each workspace file has zero or one `zed-dock` configuration object.
 _Avoid_: Project file, session file
