@@ -15,17 +15,15 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v6
-      - name: Install Rust
-        run: |
-          rustup toolchain install stable --profile minimal --component clippy --component rustfmt
-          rustup default stable
-      - name: Cache cargo
-        uses: Swatinem/rust-cache@v2
+      - name: Install Devbox
+        uses: jetify-com/devbox-install-action@v0.15.0
+        with:
+          enable-cache: true
       - name: Format
-        run: cargo fmt --all -- --check
+        run: devbox run -- cargo fmt --all -- --check
       - name: Check
-        run: cargo check --all-targets --locked
+        run: devbox run -- cargo check --all-targets --locked
       - name: Clippy
-        run: cargo clippy --all-targets --all-features --locked -- -D warnings
+        run: devbox run -- cargo clippy --all-targets --all-features --locked -- -D warnings
       - name: Test
-        run: cargo test --locked
+        run: devbox run -- cargo test --locked
