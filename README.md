@@ -1,12 +1,12 @@
 # Zed Workspace Dock
 
 <p align="center">
-  <img src="https://shieldcn.dev/header/gradient.svg?title=Zed+Workspace+Dock&subtitle=Open+multi-project+Zed+sessions+with+a+managed+symlink+dock.&logo=https:%2F%2Fraw.githubusercontent.com%2Frunrly%2Fzed-workspace-dock%2Fmain%2Fdocs%2Fassets%2Fzwd.svg%3Fv%3D1&gradient=0D0D0D,323435&mode=dark&size=banner&align=center&font=geist-mono&border=true&watermark=true" alt="Zed Workspace Dock" />
+  <img src="https://shieldcn.dev/header/gradient.svg?title=Zed+Workspace+Dock&subtitle=Open+multi-project+Zed+sessions+with+a+managed+symlink+dock.&logo=https%3A%2F%2Fraw.githubusercontent.com%2Frunrly%2Fzed-workspace-dock%2Fmain%2Fdocs%2Fassets%2Fzwd.svg%3Fv%3D2&gradient=0D0D0D,323435&mode=dark&size=banner&align=center&font=geist-mono&border=true&watermark=true" alt="Zed Workspace Dock" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/runrly/zed-workspace-dock/actions/workflows/ci.yml"><img src="https://shieldcn.dev/github/ci/runrly/zed-workspace-dock.svg?workflow=CI&branch=main&variant=secondary" alt="CI" /></a>
-  <a href="https://github.com/runrly/zed-workspace-dock/releases"><img src="https://shieldcn.dev/github/release/runrly/zed-workspace-dock.svg?variant=secondary" alt="Release" /></a>
+  <a href="https://github.com/runrly/zed-workspace-dock/actions/workflows/ci.yml"><img src="https://shieldcn.dev/github/ci/runrly/zed-workspace-dock.svg?workflow=ci.yml&branch=main&variant=secondary" alt="CI" /></a>
+  <a href="https://github.com/runrly/zed-workspace-dock/releases"><img src="https://shieldcn.dev/badge/Release-pending-71717a.svg?logo=github&variant=secondary" alt="Release pending" /></a>
   <a href="https://github.com/runrly/zed-workspace-dock"><img src="https://shieldcn.dev/github/license/runrly/zed-workspace-dock.svg?variant=secondary" alt="License" /></a>
   <a href="rust-toolchain.toml"><img src="https://shieldcn.dev/badge/Rust-1.96%2B-b7410e.svg?logo=rust&variant=secondary" alt="Rust 1.96+" /></a>
 </p>
