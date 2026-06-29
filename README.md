@@ -1,7 +1,7 @@
 # Zed Workspace Dock
 
 <p align="center">
-  <img src="https://shieldcn.dev/header/gradient.svg?title=Zed+Workspace+Dock&subtitle=Open+multi-project+Zed+sessions+with+a+managed+symlink+dock.&logo=https:%2F%2Fraw.githubusercontent.com%2Frunrly%2Fzed-workspace-dock%2Fmain%2Fdocs%2Fassets%2Fzwd.svg%3Fv%3D1&gradient=0D0D0D,323435&mode=dark&size=wide&align=center&font=geist-mono&border=true&watermark=true" alt="Zed Workspace Dock" />
+  <img src="https://shieldcn.dev/header/gradient.svg?title=Zed+Workspace+Dock&subtitle=Open+multi-project+Zed+sessions+with+a+managed+symlink+dock.&logo=https:%2F%2Fraw.githubusercontent.com%2Frunrly%2Fzed-workspace-dock%2Fmain%2Fdocs%2Fassets%2Fzwd.svg%3Fv%3D1&gradient=0D0D0D,323435&mode=dark&size=banner&align=center&font=geist-mono&border=true&watermark=true" alt="Zed Workspace Dock" />
 </p>
 
 <p align="center">
