@@ -69,7 +69,15 @@ pub enum AppError {
     },
     #[error("dock link path already exists: {path}")]
     DockLinkPathExists { path: PathBuf },
-    #[error("symlink dock mode is only supported on Linux and macOS in the MVP")]
+    #[error(
+        "failed to create Windows directory symlink at {path}: {source}; enable Developer Mode, grant SeCreateSymbolicLinkPrivilege, or run as administrator"
+    )]
+    WindowsSymlink {
+        path: PathBuf,
+        #[source]
+        source: std::io::Error,
+    },
+    #[error("symlink dock mode is not supported on this platform")]
     UnsupportedSymlinkPlatform,
     #[error("Zed exited with status: {status}")]
     ZedExited { status: ExitStatus },

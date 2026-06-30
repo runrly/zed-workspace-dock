@@ -18,7 +18,7 @@ Zed can open multiple folders directly, but its terminal still benefits from a s
 [Install](#install) - [Quick start](#quick-start) - [Usage](#usage) - [Workspace files](#workspace-files) - [Development](#development)
 
 > [!NOTE]
-> Windows support is partial in the MVP. `folders` mode is supported on Windows; `symlink` dock mode is currently intended for macOS and Linux.
+> On Windows, `symlink` dock mode creates directory symbolic links. Windows may require Developer Mode, `SeCreateSymbolicLinkPrivilege`, or an administrator shell to create those links.
 
 ## Features
 

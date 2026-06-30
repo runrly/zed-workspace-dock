@@ -98,7 +98,7 @@ fn prepare_dock_dir(dock_root: &Path, workspace_path: &Path) -> Result<()> {
             return Err(AppError::ManagedDockEntryNotSymlink { path: entry.path() });
         }
 
-        fs::remove_file(entry.path())?;
+        remove_managed_link(&entry.path())?;
     }
 
     Ok(())
@@ -205,9 +205,39 @@ fn create_symlink(target: &Path, link: &Path) -> Result<()> {
     Ok(())
 }
 
-#[cfg(not(unix))]
+#[cfg(windows)]
+fn create_symlink(target: &Path, link: &Path) -> Result<()> {
+    if link.exists() || link.symlink_metadata().is_ok() {
+        return Err(AppError::DockLinkPathExists {
+            path: link.to_path_buf(),
+        });
+    }
+
+    std::os::windows::fs::symlink_dir(target, link).map_err(|source| AppError::WindowsSymlink {
+        path: link.to_path_buf(),
+        source,
+    })?;
+
+    Ok(())
+}
+
+#[cfg(not(any(unix, windows)))]
 fn create_symlink(_target: &Path, _link: &Path) -> Result<()> {
     Err(AppError::UnsupportedSymlinkPlatform)
+}
+
+#[cfg(windows)]
+fn remove_managed_link(path: &Path) -> Result<()> {
+    fs::remove_dir(path)?;
+
+    Ok(())
+}
+
+#[cfg(not(windows))]
+fn remove_managed_link(path: &Path) -> Result<()> {
+    fs::remove_file(path)?;
+
+    Ok(())
 }
 
 #[cfg(test)]
@@ -407,7 +437,6 @@ mod tests {
         assert!(dock_root.join("notes.txt").exists());
     }
 
-    #[cfg(unix)]
     fn read_link_target(path: &Path) -> PathBuf {
         fs::read_link(path).unwrap()
     }
