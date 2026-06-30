@@ -4,6 +4,17 @@ All notable changes to Zed Workspace Dock are tracked here.
 
 Release PRs update this file. Manual edits should only capture release history that predates automation.
 
+## [0.1.1](https://github.com/runrly/zed-workspace-dock/compare/v0.1.0...v0.1.1) - 2026-06-30
+
+### Fixed
+
+- *(windows)* support symlink dock mode
+
+### Other
+
+- *(release)* restrict release commit triggers
+- *(readme)* show release badge
+
 ## [0.1.0] - 2026-06-23
 
 ### Added

@@ -1,6 +1,6 @@
 [package]
 name = "zed-workspace-dock"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 rust-version = "1.96"
 description = "Rust CLI for opening Zed workspace files through a managed symlink dock."
