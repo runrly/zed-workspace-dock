@@ -1,13 +1,13 @@
 [package]
-name = "zed-workspace-dock"
+name = "zwd"
 version = "0.1.1"
 edition = "2024"
 rust-version = "1.96"
 description = "Rust CLI for opening Zed workspace files through a managed symlink dock."
 license = "MIT"
 publish = false
-repository = "https://github.com/runrly/zed-workspace-dock"
-homepage = "https://github.com/runrly/zed-workspace-dock"
+repository = "https://github.com/runrly/zwd"
+homepage = "https://github.com/runrly/zwd"
 readme = "README.md"
 keywords = ["zed", "workspace", "cli", "developer-tools"]
 categories = ["command-line-utilities", "development-tools"]

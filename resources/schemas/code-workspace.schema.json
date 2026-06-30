@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://zed-workspace-dock.local/schemas/code-workspace.schema.json",
+  "$id": "https://zwd.local/schemas/code-workspace.schema.json",
   "title": "Zed Workspace Dock Workspace",
-  "description": "Strict JSON .code-workspace document understood by zed-workspace-dock.",
+  "description": "Strict JSON .code-workspace document understood by zwd.",
   "type": "object",
   "properties": {
     "folders": {

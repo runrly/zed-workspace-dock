@@ -9,15 +9,16 @@ Use this file as the local operating guide for AI agents working in this reposit
 
 ## Current Product Shape
 
-- Canonical product and package: `zed-workspace-dock`.
+- Canonical product name: Zed Workspace Dock.
+- Canonical short name, repository slug, Cargo package, and installed binary: `zwd`.
 - Public command and only installed binary: `zwd`, backed by `src/bin/zwd.rs`.
 - Commands: `create`, `open`, `install`, and `list`.
 - Default create mode: `symlink`.
 - Alternate open/create mode: `folders`.
 - Workspace format: strict JSON `.code-workspace` files with optional `folders` and optional `zed-dock`.
 - Managed state:
-  - Registered workspaces live under the user config directory at `zed-workspace-dock/workspaces/`.
-  - Dock roots live under the platform cache directory at `zed-workspace-dock/docks/`.
+  - Registered workspaces live under the user config directory at `zwd/workspaces/`.
+  - Dock roots live under the platform cache directory at `zwd/docks/`.
   - Zed task templates come from `resources/zed-tasks.json`.
   - JSON Schemas live under `resources/schemas/` and are documentation/editor/test resources, not runtime validators.
 

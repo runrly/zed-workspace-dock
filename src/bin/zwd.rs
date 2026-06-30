@@ -1,5 +1,5 @@
 use clap::Parser;
-use zed_workspace_dock::{cli::Cli, run};
+use zwd::{cli::Cli, run};
 
 fn main() {
     if let Err(error) = run(Cli::parse()) {

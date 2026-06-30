@@ -12,7 +12,7 @@ use crate::{
     error::{AppError, Result},
 };
 
-const APP_DIR: &str = "zed-workspace-dock";
+const APP_DIR: &str = "zwd";
 const RESERVED_DOCK_METADATA_NAMES: [&str; 1] = [".zed-dock.json"];
 const WORKSPACE_EXTENSION: &str = "code-workspace";
 const WORKSPACES_DIR: &str = "workspaces";

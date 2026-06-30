@@ -1,13 +1,13 @@
 # Zed Workspace Dock
 
 <p align="center">
-  <img src="https://shieldcn.dev/header/gradient.svg?title=Zed+Workspace+Dock&subtitle=Open+multi-project+Zed+sessions+with+a+managed+symlink+dock.&logo=https%3A%2F%2Fraw.githubusercontent.com%2Frunrly%2Fzed-workspace-dock%2Fmain%2Fdocs%2Fassets%2Fzwd.svg%3Fv%3D2&gradient=0D0D0D,323435&mode=dark&size=banner&align=center&font=geist-mono&border=true&watermark=true" alt="Zed Workspace Dock" />
+  <img src="https://shieldcn.dev/header/gradient.svg?title=Zed+Workspace+Dock&subtitle=Open+multi-project+Zed+sessions+with+a+managed+symlink+dock.&logo=https%3A%2F%2Fraw.githubusercontent.com%2Frunrly%2Fzwd%2Fmain%2Fdocs%2Fassets%2Fzwd.svg%3Fv%3D2&gradient=0D0D0D,323435&mode=dark&size=banner&align=center&font=geist-mono&border=true&watermark=true" alt="Zed Workspace Dock" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/runrly/zed-workspace-dock/actions/workflows/ci.yml"><img src="https://shieldcn.dev/github/ci/runrly/zed-workspace-dock.svg?workflow=ci.yml&branch=main&variant=secondary" alt="CI" /></a>
-  <a href="https://github.com/runrly/zed-workspace-dock/releases"><img src="https://shieldcn.dev/github/release/runrly/zed-workspace-dock.svg?variant=secondary" alt="Release" /></a>
-  <a href="https://github.com/runrly/zed-workspace-dock"><img src="https://shieldcn.dev/github/license/runrly/zed-workspace-dock.svg?variant=secondary" alt="License" /></a>
+  <a href="https://github.com/runrly/zwd/actions/workflows/ci.yml"><img src="https://shieldcn.dev/github/ci/runrly/zwd.svg?workflow=ci.yml&branch=main&variant=secondary" alt="CI" /></a>
+  <a href="https://github.com/runrly/zwd/releases"><img src="https://shieldcn.dev/github/release/runrly/zwd.svg?variant=secondary" alt="Release" /></a>
+  <a href="https://github.com/runrly/zwd"><img src="https://shieldcn.dev/github/license/runrly/zwd.svg?variant=secondary" alt="License" /></a>
   <a href="rust-toolchain.toml"><img src="https://shieldcn.dev/badge/Rust-1.96%2B-b7410e.svg?logo=rust&variant=secondary" alt="Rust 1.96+" /></a>
 </p>
 
@@ -35,18 +35,18 @@ Install the latest release on macOS or Linux:
 
 ```bash
 curl --proto '=https' --tlsv1.2 -LsSf \
-  https://github.com/runrly/zed-workspace-dock/releases/latest/download/zed-workspace-dock-installer.sh | sh
+  https://github.com/runrly/zwd/releases/latest/download/zwd-installer.sh | sh
 ```
 
 Install the latest release on Windows PowerShell:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -c "irm https://github.com/runrly/zed-workspace-dock/releases/latest/download/zed-workspace-dock-installer.ps1 | iex"
+powershell -ExecutionPolicy Bypass -c "irm https://github.com/runrly/zwd/releases/latest/download/zwd-installer.ps1 | iex"
 ```
 
 Installers place the `zwd` binary under Cargo's bin directory by default. Make sure that directory is on your `PATH`.
 
-You can also download platform archives from [GitHub Releases](https://github.com/runrly/zed-workspace-dock/releases). Release artifacts include SHA256 checksums.
+You can also download platform archives from [GitHub Releases](https://github.com/runrly/zwd/releases). Release artifacts include SHA256 checksums.
 
 ## Quick Start
 
@@ -79,7 +79,7 @@ zwd create ../api ../web ../docs --name work --force
 
 ## Usage
 
-The public command is `zwd`, short for Zed Workspace Dock. The project, repository, Cargo package, and managed state directories keep the descriptive `zed-workspace-dock` name.
+The public command is `zwd`, short for Zed Workspace Dock. The repository, Cargo package, release assets, and managed state directories use the short `zwd` name.
 
 Create a registered workspace with a generated name:
 
@@ -90,7 +90,7 @@ zwd create ../api ../web
 The command prints the real `.code-workspace` path created under the user config directory, for example:
 
 ```text
-~/Library/Application Support/zed-workspace-dock/workspaces/ws-abcd0001020304ff.code-workspace
+~/Library/Application Support/zwd/workspaces/ws-abcd0001020304ff.code-workspace
 ```
 
 Create a workspace file in a specific output directory:
@@ -178,7 +178,7 @@ Supported modes are:
 
 If `zed-dock` exists, `mode` is required. If `folders` is missing, runtime parsing treats it as an empty list.
 
-Registered workspaces are stored under the user config directory at `zed-workspace-dock/workspaces/`. Workspaces created with `--output <dir>` are standalone files in that directory and are opened by path.
+Registered workspaces are stored under the user config directory at `zwd/workspaces/`. Workspaces created with `--output <dir>` are standalone files in that directory and are opened by path.
 
 The `create` command accepts one or more folder paths as positional arguments. It writes `symlink` mode unless `--mode folders` is passed. Created workspaces store canonical absolute folder paths resolved from the current working directory.
 
@@ -193,7 +193,7 @@ The schemas are documentation, editor, and test resources. Runtime parsing still
 
 ## Safety
 
-- Dock directories live under the platform cache directory at `zed-workspace-dock/docks/`.
+- Dock directories live under the platform cache directory at `zwd/docks/`.
 - Each managed dock contains `.zed-dock.json`.
 - Rebuilds modify only marker-owned docks.
 - Existing dock directories without a valid marker abort.

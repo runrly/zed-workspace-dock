@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-Security updates are provided for the latest released version of `zed-workspace-dock`.
+Security updates are provided for the latest released version of `zwd`.
 
 ## Reporting a Vulnerability
 

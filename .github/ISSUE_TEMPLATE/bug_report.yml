@@ -1,5 +1,5 @@
 name: Bug report
-description: Report a reproducible problem with zed-workspace-dock.
+description: Report a reproducible problem with zwd.
 title: "bug: "
 labels:
   - bug

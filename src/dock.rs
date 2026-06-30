@@ -40,7 +40,7 @@ pub(crate) fn build_dock_in(
 ) -> Result<PathBuf> {
     let workspace_abs = absolute_workspace_path(workspace_path)?;
     let dock_root = cache_dir
-        .join("zed-workspace-dock")
+        .join("zwd")
         .join("docks")
         .join(dock_name(workspace_path, &workspace_abs));
 
@@ -396,7 +396,7 @@ mod tests {
         fs::write(&workspace, "{}").unwrap();
         let dock_root = temp
             .path()
-            .join("zed-workspace-dock")
+            .join("zwd")
             .join("docks")
             .join(dock_name(&workspace, &workspace.canonicalize().unwrap()));
         fs::create_dir_all(&dock_root).unwrap();

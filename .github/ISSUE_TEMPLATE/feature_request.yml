@@ -1,5 +1,5 @@
 name: Feature request
-description: Suggest a focused improvement to zed-workspace-dock.
+description: Suggest a focused improvement to zwd.
 title: "feat: "
 labels:
   - enhancement
@@ -15,7 +15,7 @@ body:
     id: proposal
     attributes:
       label: Proposal
-      description: What should zed-workspace-dock do differently?
+      description: What should zwd do differently?
     validations:
       required: true
   - type: textarea

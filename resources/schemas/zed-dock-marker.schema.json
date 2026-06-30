@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://zed-workspace-dock.local/schemas/zed-dock-marker.schema.json",
+  "$id": "https://zwd.local/schemas/zed-dock-marker.schema.json",
   "title": "Zed Workspace Dock Marker",
   "description": "Marker file stored as .zed-dock.json inside a managed symlink dock.",
   "type": "object",

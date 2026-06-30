@@ -5,19 +5,23 @@ Zed Workspace Dock is a developer tool for opening multi-project Zed sessions fr
 ## Language
 
 **Zed Workspace Dock**:
-The product and Cargo package that reads a workspace file and opens projects in Zed through either direct folders or a managed symlink dock.
+The full product name for the tool that reads a workspace file and opens projects in Zed through either direct folders or a managed symlink dock.
 _Avoid_: the pluralized product and binary names
 
+**zwd**:
+The short product name used for the public command, repository slug, Cargo package, release assets, schema namespace, and managed state directories.
+_Avoid_: alias, secondary binary name
+
 **Public command**:
-`zwd` is the only installed and user-facing CLI binary. It is short for Zed Workspace Dock; the product, repository, Cargo package, and managed state directories remain Zed Workspace Dock and `zed-workspace-dock`.
-_Avoid_: alias, package name as command
+`zwd` is the only installed and user-facing CLI binary.
+_Avoid_: package name as command
 
 **Workspace file**:
 A `.code-workspace` file describing one or more project folders for a Zed session. In the MVP, each workspace file has zero or one `zed-dock` configuration object.
 _Avoid_: Project file, session file
 
 **Registered workspace**:
-A workspace file stored in the user's config directory under `zed-workspace-dock/workspaces/`. Registered workspaces can be opened by name and are listed by `zwd list`.
+A workspace file stored in the user's config directory under `zwd/workspaces/`. Registered workspaces can be opened by name and are listed by `zwd list`.
 _Avoid_: Saved project, cached workspace
 
 **Workspace name**:
@@ -65,7 +69,7 @@ A release artifact that downloads the matching platform archive and places the `
 _Avoid_: Package manager, setup task
 
 **Flagged ambiguities**:
-Older planning text may use pluralized product names or describe `zwd` as an alias. Current language keeps `zed-workspace-dock` for the project/package and `zwd` for the public command.
+Older planning text may use pluralized product names, describe `zwd` as an alias, or keep `zed-workspace-dock` for repo/package/state paths. Current language uses Zed Workspace Dock for the full product name and `zwd` for the short public surface.
 
 ## Behavior Notes
 
