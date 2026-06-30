@@ -36,7 +36,7 @@ jobs:
           version: 0.3.159
 
   release:
-    name: Release
+    name: Tag release
     if: "${{ startsWith(github.event.head_commit.message, 'chore: release v') }}"
     runs-on: ubuntu-22.04
     steps:
@@ -52,11 +52,13 @@ jobs:
           token: ${{ steps.app-token.outputs.token }}
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
-      - name: Run release-plz release
-        uses: release-plz/action@v0.5.130
+      - name: Create release tag
         env:
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
-        with:
-          command: release
-          config: release-plz.toml
-          version: 0.3.159
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          version="$(cargo metadata --no-deps --format-version 1 | jq -r '.packages[] | select(.name == "zwd") | .version')"
+          tag="v${version}"
+          git config user.name "runrly-echo[bot]"
+          git config user.email "runrly-echo[bot]@users.noreply.github.com"
+          git tag "${tag}"
+          git push origin "${tag}"
